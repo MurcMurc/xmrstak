@@ -31,9 +31,9 @@ RUN set -x \
     && make -j$(nproc) \
     && cp bin/xmr-stak-cpu /usr/local/bin/ \
     && sed -r \
-        -e 's/^("pool_address" : ).*,/\1"pool.hashvault.pro/",/' \
+        -e 's/^("pool_address" : ).*,/\1"pool.hashvault.pro:80",/' \
         -e 's/^("wallet_address" : ).*,/\1"46qW88SQsGdCzHB65dhLpkehyJaYzzaLbM4VFFrZLqahhUCdPjkGkDYjLGGEH4upPoBjbNjSsbHCmEPvY9cTFbymBWcaFcr",/' \
-        -e 's/^("pool_password" : ).*,/\1"",/' \
+        -e 's/^("pool_password" : ).*,/\1"docker-xmr-stak-cpu:x",/' \
         ../config.txt > /usr/local/etc/config.txt \
     \
     && rm -r /usr/local/src/xmr-stak-cpu \
